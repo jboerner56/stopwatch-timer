@@ -22,6 +22,10 @@ class Stopwatch extends React.Component{
                 onClick={this._stopTimer}>
                     Stop
                 </button>
+                <button
+                onClick={this._resetTimer}>
+                Reset
+                </button>
             </div>
         )
     }
@@ -35,6 +39,12 @@ class Stopwatch extends React.Component{
     _stopTimer = () => {
         clearInterval(this.interval);
     } 
+    _resetTimer = () => {
+        clearInterval(this.interval);
+        this.setState({
+            number: 0
+        });
+    }
 }
 
 export default Stopwatch;
