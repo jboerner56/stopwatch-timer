@@ -3,7 +3,8 @@ class Stopwatch extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            number: props.startAt || 0
+            number: props.startAt || 0,
+            timer: false
         };
     }
 
@@ -32,10 +33,8 @@ class Stopwatch extends React.Component{
         }, 1000);
     }
     _stopTimer = () => {
-        this.setState({
-
-        })
-    }
+        clearInterval(this.interval);
+    } 
 }
 
 export default Stopwatch;

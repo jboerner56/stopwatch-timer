@@ -5,6 +5,7 @@ import Timer from './Timer';
 function App() {
   return (
     <div className="App">
+    <div>
       <header>
         <Stopwatch />
 
@@ -12,6 +13,8 @@ function App() {
 
         </header>
       </div>
+
+    </div>
     );
   }
 
