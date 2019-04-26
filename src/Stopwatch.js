@@ -6,13 +6,7 @@ class Stopwatch extends React.Component{
             number: props.startAt || 0
         };
     }
-    componentDidMount() {
-        setInterval(() => {
-            this.setState({
-                number: this.state.number + 1
-            });
-        }, 1000);
-    }
+
     render() {
         return (
             <div>
@@ -31,13 +25,15 @@ class Stopwatch extends React.Component{
         )
     }
     _startTimer = () => {
-        this.setState({
-
-        })
+        this.interval = setInterval(() => {
+            this.setState({
+                number: this.state.number + 1
+            });
+        }, 1000);
     }
     _stopTimer = () => {
         this.setState({
-            
+
         })
     }
 }
