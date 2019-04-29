@@ -30,11 +30,21 @@ class Stopwatch extends React.Component{
         )
     }
     _startTimer = () => {
-        this.interval = setInterval(() => {
+        if(!this.state.number) {
+            this.interval = setInterval(() => {
             this.setState({
                 number: this.state.number + 1
             });
-        }, 1000);
+        }, 1000)
+        } else if(this.state.number) {
+            clearInterval(this.interval);
+                this.interval = setInterval(() => {
+                    this.setState({
+                        number: this.state.number + 1
+                    })
+                }, 1000)
+            }
+        
     }
     _stopTimer = () => {
         clearInterval(this.interval);
